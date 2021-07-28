@@ -1,0 +1,358 @@
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* img {
+  width: 100%;
+  height: auto;
+}
+
+* span, h1 {
+  text-transform: uppercase;
+  font-family: "Clarkson", Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: white;
+}
+
+.vinyl div {
+  width: 5rem;
+  position: fixed;
+  right: 2px;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 50%;
+}
+.vinyl img {
+  border-radius: 50%;
+  width: 5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #2c2929;
+  background-image: url(../img/kchi3.jpg);
+  background-repeat: no-repeat;
+  background-size: 25rem;
+  background-position: top right;
+  height: 120px;
+  border-bottom: solid rgba(243, 243, 5, 0.801) 2px;
+  width: 100%;
+}
+header h1 {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-size: 4rem;
+  color: #e184ff;
+  text-transform: uppercase;
+}
+header .menuMobile {
+  width: 4rem;
+}
+@media (min-width: 320px) {
+  header .menuMobile {
+    display: block;
+  }
+  header .menuMobile .button {
+    background: transparent;
+    border: none;
+  }
+  header .menuMobile .button img {
+    border-radius: 50%;
+  }
+}
+@media (min-width: 900px) {
+  header .menuMobile {
+    display: none;
+  }
+}
+header nav {
+  width: 50%;
+}
+@media (min-width: 320px) {
+  header nav {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  header nav {
+    display: block;
+  }
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+header nav li a {
+  text-decoration: none;
+  background-color: #2c2929;
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-size: 25px;
+  color: #5ce6ad;
+  margin-right: 2rem;
+}
+header nav li a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: 0.1s all;
+  color: burlywood;
+}
+
+@media (min-width: 320px) {
+  .quienesSomos {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  .quienesSomos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 500px;
+  }
+}
+.quienesSomos p {
+  display: flex;
+  text-align: justify;
+  font-family: "Clarkson", Helvetica, sans-serif;
+  color: #2c2929;
+  letter-spacing: 2px;
+}
+@media (min-width: 320px) {
+  .quienesSomos p {
+    font-size: 10px;
+    padding: 5px;
+    letter-spacing: 2px;
+  }
+}
+@media (min-width: 900px) {
+  .quienesSomos p {
+    font-size: 20px;
+    padding: 1rem;
+  }
+}
+
+.discografia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.discografia h1 {
+  font-size: 6vh;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  color: #612828;
+  letter-spacing: 2rem;
+}
+.discografia ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.discografia ul li {
+  list-style: none;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.discografia ul li img {
+  padding: 20px;
+  height: 20rem;
+  width: auto;
+}
+
+.tickets {
+  background-color: #cec7ac;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tickets .principalWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tickets .principalWrapper h1 {
+  font-size: 6vh;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  color: #612828;
+  letter-spacing: 2rem;
+}
+.tickets .principalWrapper ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 320px) {
+  .tickets .principalWrapper ul {
+    flex-direction: column;
+  }
+}
+@media (min-width: 900px) {
+  .tickets .principalWrapper ul {
+    flex-direction: row;
+  }
+}
+.tickets .principalWrapper ul li {
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 2px 0px 10px 2px #888484;
+  margin: 5px;
+}
+.tickets .principalWrapper ul li img {
+  width: 320px;
+  height: 140px;
+  padding: 20px;
+}
+.tickets .principalWrapper ul span {
+  font-size: 1rem;
+}
+.tickets .principalWrapper ul button {
+  background: black;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.tickets .principalWrapper ul button a {
+  text-decoration: none;
+  color: #f1e8c3;
+}
+.tickets .principalWrapper ul button a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: 0.1s all;
+  color: burlywood;
+}
+.tickets .datos {
+  font-size: 2rem;
+  text-align: center;
+  color: #612828;
+}
+@media (min-width: 320px) {
+  .tickets .datos {
+    letter-spacing: 4px;
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 900px) {
+  .tickets .datos {
+    letter-spacing: 1rem;
+    margin-top: 3rem;
+  }
+}
+.tickets .pago {
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tickets .pago ul {
+  display: flex;
+  flex-direction: column;
+}
+.tickets .pago ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.contacto {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #2c2929;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 320px) {
+  .contacto ul {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 900px) {
+  .contacto ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.contacto li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.contacto a {
+  margin-right: 3rem;
+  padding: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-size: 3vh;
+  color: #f1e8c3;
+}
+.contacto a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: 0.1s all;
+  color: burlywood;
+}
+.contacto a:active {
+  color: darkseagreen;
+}
+@media (min-width: 320px) {
+  .contacto a {
+    padding: 1rem;
+  }
+}
+.contacto div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacto div span {
+  color: #f1e8c3;
+  font-size: 2vh;
+}
+.contacto div span a {
+  font-size: 2vh;
+}
+
+/*# sourceMappingURL=styles.css.map */
