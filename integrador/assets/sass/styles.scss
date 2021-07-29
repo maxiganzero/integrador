@@ -29,7 +29,6 @@ body {
 .vinyl {
     
     div{
-        width: 5rem;
         position: fixed;
         right: 2px;
         bottom: 0;
@@ -38,7 +37,13 @@ body {
     }
      img{
             border-radius: 50%;
-            width: 5rem;    
+            @media(min-width: 320px){
+                width: 3rem;
+            }
+            @media(min-width: 900px){
+                width: 5rem;
+            }
+
     }
 }
                
@@ -49,20 +54,29 @@ header {
     background-color:$main-gray;
     background-image: url(../img/kchi3.jpg);
     background-repeat: no-repeat;
-    background-size: 25rem;
     background-position: top right;
     height: 120px;
     border-bottom: solid rgba(243, 243, 5, 0.801) 2px;
     width: 100%;
-    h1 {
-        font-family: 'Clarkson',Helvetica,sans-serif;
-        font-size: 4rem;          
+    @media(min-width: 320px){
+        background-size: 15rem;
+    }
+    @media(min-width: 900px){
+        background-size: 25rem;
+    }
+    h1 {         
         color: rgb(225 132 255);
         text-transform: uppercase;
+        @media(min-width: 320px){
+            font-size: 5vh; 
+        }
+        @media(min-width: 900px){
+            font-size: 10vh;
+        }
     }
 
     .menuMobile {
-        width: 4rem;
+        width: 3rem;
 
         @media(min-width: 320px){
             display: block;
@@ -78,8 +92,6 @@ header {
             display: none;
             
         }
-        
-
     }
 
     nav {
@@ -98,21 +110,19 @@ header {
             align-items: flex-end;
         }    
         li {
-
-
             a {
                 text-decoration: none;
                 background-color: $main-gray;
                 font-family: 'Clarkson',Helvetica,sans-serif;
                 font-size: 25px;
-                color: rgb(92 230 173);
+                color: $main-green;
                 margin-right: 2rem;
 
                 &:hover{
                     text-decoration: underline;
                     text-underline-position: under;
                     transition: .1s all;
-                    color: burlywood;
+                    color: $main-gold;
                 }
             }
         } 
@@ -128,8 +138,24 @@ header {
         justify-content: center;
         flex-direction: column;
         height: 500px;
+        .video{
+            display: none;
+        }
+        .videoMobile{
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
     }
    
+    @media(min-width:900px){
+        .video{
+            display: block;
+        }
+        .videoMobile{
+            display: none;
+        }
+    }
     
     @media (min-width:1200px){
         display: flex;
@@ -139,9 +165,6 @@ header {
         height: 500px;
     }
     
-
-  
-
     p {
         display: flex;
         text-align: justify;
@@ -156,6 +179,7 @@ header {
         @media(min-width: 900px){
             font-size: 20px;
             padding: 1rem;
+            letter-spacing: 2px;
         }
     }
 }
@@ -167,11 +191,16 @@ header {
     align-items: center;
     
     h1 {
-        font-size: 6vh;
         margin-top: 1rem;
         margin-bottom: 3rem;
         color: $main-wine;
-        letter-spacing: 2rem;
+        letter-spacing: 1rem;
+        @media(min-width:320px){
+            font-size: 3vh;
+        }
+        @media(min-width: 900px){
+            font-size: 6vh;
+        }
     }
 
     ul{
@@ -193,12 +222,18 @@ header {
                 height: 20rem;
                 width: auto;
             }
+            span{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $main-wine;
+            }
         }
     }
 }
 
 .tickets {
-    background-color:rgb(206 199 172);
+    background-color:$main-lightgray;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -212,11 +247,16 @@ header {
         align-items: center;
 
         h1 {
-            font-size: 6vh;
             margin-top: 3rem;
             margin-bottom: 6rem;
             color: $main-wine;
             letter-spacing: 2rem;
+            @media(min-width:320px){
+                font-size: 3vh;
+            }
+            @media(min-width: 900px){
+                font-size: 6vh;
+            }
         }
     
         ul{
@@ -239,7 +279,7 @@ header {
                 box-shadow: 2px 0px 10px 2px rgb(136, 132, 132);
                 margin: 5px;
                 img{
-                    width: 320px;
+                    width: 260px;
                     height: 140px;
                     padding: 20px;
                 }
@@ -267,7 +307,7 @@ header {
                         text-decoration: underline;
                         text-underline-position: under;
                         transition: .1s all;
-                        color: burlywood;
+                        color: $main-gold;
                     }
                 }
             }
@@ -275,14 +315,15 @@ header {
     }
 
     .datos{
-        font-size: 2rem;
         text-align: center;
         color: $main-wine;
         @media(min-width: 320px){
+            font-size: 3vh;
             letter-spacing: 4px;
             margin-top: 3rem;
         }
         @media(min-width: 900px){
+            font-size: 6vh;
             letter-spacing: 1rem;
             margin-top: 3rem;
         }
