@@ -19,28 +19,7 @@ body {
   width: 100vw;
   max-width: 100%;
   max-height: 100%;
-  background-color: white;
-}
-
-.vinyl div {
-  position: fixed;
-  right: 2px;
-  bottom: 0;
-  z-index: 1;
-  border-radius: 50%;
-}
-.vinyl img {
-  border-radius: 50%;
-}
-@media (min-width: 320px) {
-  .vinyl img {
-    width: 3rem;
-  }
-}
-@media (min-width: 900px) {
-  .vinyl img {
-    width: 5rem;
-  }
+  background-color: #f1e8c3;
 }
 
 header {
@@ -68,6 +47,7 @@ header {
 header h1 {
   color: #e184ff;
   text-transform: uppercase;
+  animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 @media (min-width: 320px) {
   header h1 {
@@ -89,6 +69,7 @@ header .menuMobile {
   header .menuMobile .button {
     background: transparent;
     border: none;
+    outline: 0;
   }
   header .menuMobile .button img {
     border-radius: 50%;
@@ -98,6 +79,20 @@ header .menuMobile {
   header .menuMobile {
     display: none;
   }
+}
+header .menuMobile .dropdown-menu {
+  background: #2c2929;
+  height: 200px;
+}
+header .menuMobile .dropdown-menu li {
+  margin-bottom: 1rem;
+}
+header .menuMobile .dropdown-menu li a {
+  color: #f1e8c3;
+  text-decoration: none;
+}
+header .menuMobile .dropdown-menu li a:hover {
+  color: #e184ff;
 }
 header nav {
   width: 50%;
@@ -118,6 +113,7 @@ header nav ul {
   align-items: flex-end;
 }
 header nav li a {
+  animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   text-decoration: none;
   background-color: #2c2929;
   font-family: "Clarkson", Helvetica, sans-serif;
@@ -129,7 +125,19 @@ header nav li a:hover {
   text-decoration: underline;
   text-underline-position: under;
   transition: 0.1s all;
-  color: burlywood;
+  color: #659e84;
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 320px) {
@@ -140,21 +148,40 @@ header nav li a:hover {
     flex-direction: column;
     height: 500px;
   }
-  .quienesSomos .video {
-    display: none;
-  }
   .quienesSomos .videoMobile {
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
-}
-@media (min-width: 900px) {
-  .quienesSomos .video {
-    display: block;
+  .quienesSomos .videoTab {
+    display: none;
   }
+  .quienesSomos .videoDesktop {
+    display: none;
+  }
+}
+@media (min-width: 520px) {
   .quienesSomos .videoMobile {
     display: none;
+  }
+  .quienesSomos .videoTab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .quienesSomos .videoDesktop {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  .quienesSomos .videoMobile {
+    display: none;
+  }
+  .quienesSomos .videoTab {
+    display: none;
+  }
+  .quienesSomos .videoDesktop {
+    display: block;
   }
 }
 @media (min-width: 1200px) {
@@ -210,6 +237,9 @@ header nav li a:hover {
     font-size: 6vh;
   }
 }
+.discografia h1:hover {
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 .discografia ul {
   display: flex;
   flex-direction: row;
@@ -220,6 +250,7 @@ header nav li a:hover {
 .discografia ul li {
   list-style: none;
   padding: 20px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -229,11 +260,19 @@ header nav li a:hover {
   height: 20rem;
   width: auto;
 }
-.discografia ul li span {
+.discografia ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #612828;
+  text-decoration: none;
+  letter-spacing: 5px;
+}
+.discografia ul li a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: 0.1s all;
+  color: #2c2929;
 }
 
 .tickets {
@@ -265,6 +304,9 @@ header nav li a:hover {
   .tickets .principalWrapper h1 {
     font-size: 6vh;
   }
+}
+.tickets .principalWrapper h1:hover {
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .tickets .principalWrapper ul {
   width: 100%;
@@ -337,6 +379,9 @@ header nav li a:hover {
     margin-top: 3rem;
   }
 }
+.tickets .datos:hover {
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 .tickets .pago {
   width: 100%;
   margin-top: 5rem;
@@ -384,29 +429,32 @@ header nav li a:hover {
 .contacto li {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
 }
-.contacto a {
+.contacto li a {
   margin-right: 3rem;
-  padding: 0;
   text-transform: uppercase;
   text-decoration: none;
   font-family: "Clarkson", Helvetica, sans-serif;
   font-size: 3vh;
   color: #f1e8c3;
 }
-.contacto a:hover {
+.contacto li a:hover {
   text-decoration: underline;
   text-underline-position: under;
   transition: 0.1s all;
   color: burlywood;
 }
-.contacto a:active {
+.contacto li a:active {
   color: darkseagreen;
 }
 @media (min-width: 320px) {
-  .contacto a {
+  .contacto li a {
     padding: 1rem;
+  }
+}
+@media (min-width: 900px) {
+  .contacto li a {
+    padding: 0;
   }
 }
 .contacto div {
@@ -420,6 +468,47 @@ header nav li a:hover {
 }
 .contacto div span a {
   font-size: 2vh;
+  text-decoration: none;
+  color: #f1e8c3;
+}
+.contacto div span a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: 0.1s all;
+  color: burlywood;
+}
+
+.vinyl div {
+  position: fixed;
+  right: 2px;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 50%;
+}
+.vinyl img {
+  border-radius: 50%;
+}
+@media (min-width: 320px) {
+  .vinyl img {
+    width: 3rem;
+  }
+}
+@media (min-width: 900px) {
+  .vinyl img {
+    width: 5rem;
+  }
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

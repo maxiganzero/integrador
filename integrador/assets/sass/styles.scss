@@ -4,12 +4,12 @@
     margin: 0px;
     padding: 0;
     box-sizing: border-box;
-   }
+}
  
 * img {
      width: 100%;
-     height: auto;
-   }
+     height: auto;  
+}
 
 *span , h1{
     text-transform: uppercase;
@@ -23,28 +23,7 @@ body {
     width: 100vw;
     max-width: 100%;
     max-height: 100%;
-    background-color: white;
-}
-
-.vinyl {
-    
-    div{
-        position: fixed;
-        right: 2px;
-        bottom: 0;
-        z-index: 1;
-        border-radius: 50%;
-    }
-     img{
-            border-radius: 50%;
-            @media(min-width: 320px){
-                width: 3rem;
-            }
-            @media(min-width: 900px){
-                width: 5rem;
-            }
-
-    }
+    background-color: $main-white;
 }
                
 header {
@@ -67,6 +46,7 @@ header {
     h1 {         
         color: rgb(225 132 255);
         text-transform: uppercase;
+        animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
         @media(min-width: 320px){
             font-size: 5vh; 
         }
@@ -77,12 +57,12 @@ header {
 
     .menuMobile {
         width: 3rem;
-
         @media(min-width: 320px){
             display: block;
             .button{
                 background: transparent;
                 border: none;
+                outline: 0;
                 img{
                     border-radius: 50%;
                 }
@@ -91,6 +71,22 @@ header {
         @media(min-width: 900px){
             display: none;
             
+        }
+
+        .dropdown-menu{
+            background: $main-gray;
+            height: 200px;
+            li{
+                margin-bottom: 1rem;
+                a{
+                    color:$main-white;
+                    text-decoration: none;
+                    &:hover {
+                        color:rgb(225 132 255);
+                    }
+                   
+                }
+            }
         }
     }
 
@@ -111,6 +107,7 @@ header {
         }    
         li {
             a {
+                animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
                 text-decoration: none;
                 background-color: $main-gray;
                 font-family: 'Clarkson',Helvetica,sans-serif;
@@ -122,13 +119,23 @@ header {
                     text-decoration: underline;
                     text-underline-position: under;
                     transition: .1s all;
-                    color: $main-gold;
+                    color: rgb(101, 158, 132);
                 }
             }
         } 
     }
-
-   
+    @keyframes tracking-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 1;
+        }
+    }
 }
 
 .quienesSomos {
@@ -138,23 +145,46 @@ header {
         justify-content: center;
         flex-direction: column;
         height: 500px;
-        .video{
-            display: none;
-        }
         .videoMobile{
-            display: block;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
+        .videoTab{
+            display: none;
+        }
+        .videoDesktop{
+            display: none;
+        }
+        
     }
    
-    @media(min-width:900px){
-        .video{
-            display: block;
-        }
+    @media(min-width:520px){
         .videoMobile{
             display: none;
         }
+        .videoTab{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .videoDesktop{
+            display: none;
+        }
+    }
+
+
+    @media(min-width:900px){
+        .videoMobile{
+            display: none;
+        }
+        .videoTab{
+            display: none;
+        }
+        .videoDesktop{
+            display: block;
+        }
+      
     }
     
     @media (min-width:1200px){
@@ -201,6 +231,9 @@ header {
         @media(min-width: 900px){
             font-size: 6vh;
         }
+        &:hover{
+                animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
     }
 
     ul{
@@ -214,6 +247,7 @@ header {
         li {
             list-style: none;
             padding: 20px;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -222,11 +256,19 @@ header {
                 height: 20rem;
                 width: auto;
             }
-            span{
+            a{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 color: $main-wine;
+                text-decoration: none;
+                letter-spacing: 5px;
+                &:hover{
+                    text-decoration: underline;
+                text-underline-position: under;
+                transition: .1s all;
+                color: $main-gray;
+                }
             }
         }
     }
@@ -256,6 +298,9 @@ header {
             }
             @media(min-width: 900px){
                 font-size: 6vh;
+            }
+            &:hover{
+                animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
         }
     
@@ -301,8 +346,7 @@ header {
                 cursor: pointer;
                 a{
                     text-decoration: none;
-                    color: $main-white;
-
+                    color: rgb(241, 232, 195);
                     &:hover{
                         text-decoration: underline;
                         text-underline-position: under;
@@ -327,7 +371,9 @@ header {
             letter-spacing: 1rem;
             margin-top: 3rem;
         }
-       
+        &:hover{
+            animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
     }
 
     .pago {
@@ -357,7 +403,6 @@ header {
     max-width: 100%;
     max-height: 100%;
     background-color: $main-gray;
-   
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -376,19 +421,16 @@ header {
     }
 
     li{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
+        display: flex;
+        flex-direction: row;
         a {
             margin-right: 3rem;
-            padding: 0;
             text-transform: uppercase;
             text-decoration: none;
             font-family: 'Clarkson',Helvetica,sans-serif;
             font-size: 3vh;
-            color: $main-white;
+            color: rgb(241, 232, 195);
+
             &:hover{
                 text-decoration: underline;
                 text-underline-position: under;
@@ -400,20 +442,63 @@ header {
             }
             @media(min-width: 320px){
                 padding: 1rem;
-                
+            }
+            @media(min-width: 900px){
+                padding: 0;
             }
         }
+    }
 
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
         span {
-            color: $main-white;
+            color: rgb(241, 232, 195);
             font-size: 2vh;
             a {
                 font-size: 2vh;
+                text-decoration: none;
+                color: rgb(241, 232, 195);
+                &:hover{
+                    text-decoration: underline;
+                    text-underline-position: under;
+                    transition: .1s all;
+                    color: burlywood;
+                }
             }
         }
+    }
+}
+
+.vinyl {
+    
+    div{
+        position: fixed;
+        right: 2px;
+        bottom: 0;
+        z-index: 1;
+        border-radius: 50%;
+    }
+     img{
+            border-radius: 50%;
+            @media(min-width: 320px){
+                width: 3rem;
+            }
+            @media(min-width: 900px){
+                width: 5rem;
+            }
+    }
+}
+
+@keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
     }
 }
