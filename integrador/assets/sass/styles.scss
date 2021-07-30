@@ -50,7 +50,7 @@ header {
         @media(min-width: 320px){
             font-size: 5vh; 
         }
-        @media(min-width: 900px){
+        @media(min-width: 1200px){
             font-size: 10vh;
         }
     }
@@ -68,14 +68,14 @@ header {
                 }
             }
         }
-        @media(min-width: 900px){
+        @media(min-width: 1200px){
             display: none;
             
         }
 
         .dropdown-menu{
             background: $main-gray;
-            height: 200px;
+            height: 270px;
             li{
                 margin-bottom: 1rem;
                 a{
@@ -96,7 +96,7 @@ header {
             display: none;
         }
 
-        @media(min-width:900px){
+        @media(min-width:1200px){
             display: block;
         }
 
@@ -111,9 +111,9 @@ header {
                 text-decoration: none;
                 background-color: $main-gray;
                 font-family: 'Clarkson',Helvetica,sans-serif;
-                font-size: 25px;
+                font-size: 18px;
                 color: $main-green;
-                margin-right: 2rem;
+                margin-right: 1rem;
 
                 &:hover{
                     text-decoration: underline;
@@ -228,7 +228,7 @@ header {
         @media(min-width:320px){
             font-size: 3vh;
         }
-        @media(min-width: 900px){
+        @media(min-width: 1200px){
             font-size: 6vh;
         }
         &:hover{
@@ -296,7 +296,7 @@ header {
             @media(min-width:320px){
                 font-size: 3vh;
             }
-            @media(min-width: 900px){
+            @media(min-width: 1200px){
                 font-size: 6vh;
             }
             &:hover{
@@ -312,7 +312,7 @@ header {
             @media(min-width: 320px){
                 flex-direction: column;
             }
-            @media(min-width:900px){
+            @media(min-width:1200px){
                 flex-direction: row;
             }
     
@@ -366,7 +366,7 @@ header {
             letter-spacing: 4px;
             margin-top: 3rem;
         }
-        @media(min-width: 900px){
+        @media(min-width: 1200px){
             font-size: 6vh;
             letter-spacing: 1rem;
             margin-top: 3rem;
@@ -413,7 +413,7 @@ header {
             flex-direction: column;
             align-items: center;
         }
-        @media(min-width: 900px){
+        @media(min-width: 1200px){
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -502,3 +502,66 @@ header {
       opacity: 1;
     }
 }
+
+.registro{
+    h1{
+        text-align: center;
+        font-size: 6vh;
+        color: $main-wine;
+        padding: 2rem;
+    }
+    .formRegistro{
+        background: $main-gray;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            font-family: 'Clarkson',Helvetica,sans-serif;
+            list-style: none;
+            color: $main-green;
+            @media(min-width: 320px){
+                font-size: 3vh;
+                letter-spacing: 4px;
+                margin-top: 3rem;
+            }
+            @media(min-width: 900px){
+                font-size: 5vh;
+                letter-spacing: 5px;
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+
+.logIn{
+    h1{
+        text-align: center;
+        font-size: 6vh;
+        color: $main-wine;
+        padding: 2rem;
+    }
+    .formLogIn{
+        background: $main-gray;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            font-family: 'Clarkson',Helvetica,sans-serif;
+            list-style: none;
+            color: $main-green;
+            @media(min-width: 320px){
+                font-size: 3vh;
+                letter-spacing: 4px;
+                margin-top: 3rem;
+            }
+            @media(min-width: 900px){
+                font-size: 5vh;
+                letter-spacing: 5px;
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+

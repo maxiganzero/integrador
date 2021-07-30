@@ -54,7 +54,7 @@ header h1 {
     font-size: 5vh;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   header h1 {
     font-size: 10vh;
   }
@@ -75,14 +75,14 @@ header .menuMobile {
     border-radius: 50%;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   header .menuMobile {
     display: none;
   }
 }
 header .menuMobile .dropdown-menu {
   background: #2c2929;
-  height: 200px;
+  height: 270px;
 }
 header .menuMobile .dropdown-menu li {
   margin-bottom: 1rem;
@@ -102,7 +102,7 @@ header nav {
     display: none;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   header nav {
     display: block;
   }
@@ -117,9 +117,9 @@ header nav li a {
   text-decoration: none;
   background-color: #2c2929;
   font-family: "Clarkson", Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   color: #5ce6ad;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 header nav li a:hover {
   text-decoration: underline;
@@ -232,7 +232,7 @@ header nav li a:hover {
     font-size: 3vh;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .discografia h1 {
     font-size: 6vh;
   }
@@ -300,7 +300,7 @@ header nav li a:hover {
     font-size: 3vh;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .tickets .principalWrapper h1 {
     font-size: 6vh;
   }
@@ -319,7 +319,7 @@ header nav li a:hover {
     flex-direction: column;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .tickets .principalWrapper ul {
     flex-direction: row;
   }
@@ -372,7 +372,7 @@ header nav li a:hover {
     margin-top: 3rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .tickets .datos {
     font-size: 6vh;
     letter-spacing: 1rem;
@@ -419,7 +419,7 @@ header nav li a:hover {
     align-items: center;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .contacto ul {
     display: flex;
     flex-direction: row;
@@ -508,6 +508,71 @@ header nav li a:hover {
   100% {
     filter: blur(0px);
     opacity: 1;
+  }
+}
+.registro h1 {
+  text-align: center;
+  font-size: 6vh;
+  color: #612828;
+  padding: 2rem;
+}
+.registro .formRegistro {
+  background: #2c2929;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registro .formRegistro li {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  list-style: none;
+  color: #5ce6ad;
+}
+@media (min-width: 320px) {
+  .registro .formRegistro li {
+    font-size: 3vh;
+    letter-spacing: 4px;
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 900px) {
+  .registro .formRegistro li {
+    font-size: 5vh;
+    letter-spacing: 5px;
+    margin-top: 3rem;
+  }
+}
+
+.logIn h1 {
+  text-align: center;
+  font-size: 6vh;
+  color: #612828;
+  padding: 2rem;
+}
+.logIn .formLogIn {
+  background: #2c2929;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logIn .formLogIn li {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  list-style: none;
+  color: #5ce6ad;
+}
+@media (min-width: 320px) {
+  .logIn .formLogIn li {
+    font-size: 3vh;
+    letter-spacing: 4px;
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 900px) {
+  .logIn .formLogIn li {
+    font-size: 5vh;
+    letter-spacing: 5px;
+    margin-top: 3rem;
   }
 }
 
